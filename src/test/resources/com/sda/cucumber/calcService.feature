@@ -24,3 +24,9 @@ Feature: CalcService
     When I execute calculate method
     Then I get result for text with letters
 
+  Scenario: should return correct value when recipe list is passed
+    Given I initialize CalcService
+    And I pass recipe
+    When I execute calculate method
+    Then I get result for recipe
+
