@@ -37,4 +37,8 @@ public class CalcServiceSteps {
     public void I_get_0_as_a_result(){
         Assert.assertEquals(0, actual);
     }
+    @And("^I pass blank text value$")
+    public void I_pass_blank_text_value(){
+        text = "";
+    }
 }
