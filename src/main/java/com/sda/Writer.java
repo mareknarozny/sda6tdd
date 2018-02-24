@@ -2,6 +2,8 @@ package com.sda;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.stream.Stream;
+
 public class Writer {
 
     private String convertToMessage(String[] names) {
@@ -17,6 +19,10 @@ public class Writer {
         return sb.toString();
     }
 
+    private boolean isAllUpercase(String[] names){
+        return Stream.of(names).allMatch(e -> StringUtils.isAllUpperCase(e));
+    }
+
     public String sayHello(String name) {
 
         String [] names = name !=null ? name.split(",") : new String[1];
@@ -30,6 +36,7 @@ public class Writer {
         if (StringUtils.isBlank(nameSection)) {
             nameSection = "my friend";
         }
-        return greeting + ", " + nameSection + "!";
+        String output = greeting + ", " + nameSection + "!";
+        return isAllUpercase(names) ? StringUtils.upperCase(output) : output;
     }
 }
