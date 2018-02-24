@@ -2,22 +2,29 @@ package com.sda;
 
 import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class WriterTest {
 
-    @Test
-    public void sayHelloWithGivenNameTest() {
-        Writer writer = new Writer();
-        String name = "Szymon";
-        String result = writer.sayHello(name);
+    private Writer writer;
 
-        Assert.assertEquals("Expected hello message is invalid","Hello, Szymon!", result);
-
+    @Before //metoda która zawsze się wykona przed testem
+    public void init(){
+        writer = new Writer();
     }
-    @Test
+
+
+        @Test
+        public void sayHelloWithGivenNameTest() {
+            String name = "Szymon";
+            String result = writer.sayHello(name);
+
+            Assert.assertEquals("Expected hello message is invalid","Hello, Szymon!", result);
+
+        }
+        @Test
     public void sayHelloWithNoNameSpecified(){
-        Writer writer = new Writer();
         String name = "";
 
         String result = writer.sayHello(name);
@@ -28,11 +35,19 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithNullName(){
-        Writer writer = new Writer();
         String name = null;
 
         String result = writer.sayHello(name);
 
         Assert.assertEquals("Hello, my friend!", result);
+    }
+
+    @Test
+    public void sayHelloWithCapitalisedNameSpecified(){
+        String name = "SZYMON";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("HELLO, SZYMON!", result);
     }
 }
