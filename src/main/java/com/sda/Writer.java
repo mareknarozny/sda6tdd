@@ -28,10 +28,7 @@ public class Writer {
         String [] names = name !=null ? name.split(",") : new String[1];
         String nameSection = names.length==1 ? name : convertToMessage(names);
         String greeting = "Hello";
-        if (StringUtils.isAllUpperCase(nameSection)) {
-            greeting = StringUtils.upperCase(greeting);
 
-        }
         //  if (nameSection==null || "".equals(nameSection)){ //porównujemy stałe do wartości w których może wystąpić NullPOinter
         if (StringUtils.isBlank(nameSection)) {
             nameSection = "my friend";
