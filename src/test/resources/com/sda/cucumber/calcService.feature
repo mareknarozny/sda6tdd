@@ -1,32 +1,33 @@
 Feature: CalcService
   Scenario: should Add Digits In String And Produce Result
     Given I initialize CalcService
-    And I pass text value to compute
-
+    And I pass 2;3;4 value
     When I execute calculate method
-    Then I get correct result
+    Then I get 9 as a result
 
     Scenario: should return 0 when null text is passed
       Given I initialize CalcService
-      And I pass null text value
+      And I pass null
       When I execute calculate method
       Then I get 0 as a result
 
   Scenario: should return 0 when blank text is passed
     Given I initialize CalcService
-    And I pass blank text value
+    And I pass blank
     When I execute calculate method
     Then I get 0 as a result
 
   Scenario: should return correct value when mixed with letters text is passed
     Given I initialize CalcService
-    And I pass text with letters
+    And I pass 3a;2;4;5b value
     When I execute calculate method
-    Then I get result for text with letters
+    Then I get 14 as a result
 
   Scenario: should return correct value when recipe list is passed
     Given I initialize CalcService
-    And I pass recipe
+    And I pass 2 jablka;3 jajka; 5 zimniaków value
     When I execute calculate method
-    Then I get result for recipe
+    Then I get 10 as a result
+
+
 
