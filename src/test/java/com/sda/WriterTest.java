@@ -50,4 +50,21 @@ public class WriterTest {
 
         Assert.assertEquals("HELLO, SZYMON!", result);
     }
+
+    @Test
+    public void sayHelloWithOneSpaceName(){
+        String name = " ";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, my friend!", result);
+    }
+    @Test
+    public void sayHelloWithFourSpaceName(){
+        String name = "    ";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, my friend!", result);
+    }
 }

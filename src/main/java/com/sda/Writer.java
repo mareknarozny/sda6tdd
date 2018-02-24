@@ -9,8 +9,10 @@ public class Writer {
         String greeting = "Hello";
         if(StringUtils.isAllUpperCase(nameInMessage)){
             greeting = StringUtils.upperCase(greeting);
+
         }
-        if (nameInMessage==null || "".equals(nameInMessage)){ //porównujemy stałe do wartości w których może wystąpić NullPOinter
+      //  if (nameInMessage==null || "".equals(nameInMessage)){ //porównujemy stałe do wartości w których może wystąpić NullPOinter
+        if (StringUtils.isBlank(nameInMessage)){
             nameInMessage = "my friend";
         }
         return greeting+", "+ nameInMessage+ "!";
