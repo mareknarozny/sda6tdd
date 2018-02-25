@@ -11,7 +11,13 @@ public class PostOffice {
         this.senderService = senderService;
         this.userStorage = userStorage;
     }
-    public boolean createNewUser(String nickname){
+
+    public boolean sendNewMessage(String from, String to, String message) {
+        return senderService.sendMessage(from, to, message);
+
+    }
+
+    public boolean createNewUser(String nickname) {
 
         return userStorage.createNewUser(nickname);
     }
