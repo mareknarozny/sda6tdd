@@ -22,9 +22,22 @@ public class Bank {
         boolean result = false;
         if (userService.isUserPresent(userId)) {
             result = accountService.addAccount(account);
-
         }
 
+
+        return result;
+    }
+
+    public Account getAccount(int accountId) {
+        return accountService.getAccount(accountId);
+    }
+
+    public boolean changeAmount(Account account, int amount) {
+        boolean result = false;
+        if (accountService.isAccountPresent(account.getId())) {
+            account.setAmount(account.getAmount() + amount);
+            result = true;
+        }
 
         return result;
     }

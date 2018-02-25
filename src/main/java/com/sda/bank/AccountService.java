@@ -1,5 +1,7 @@
 package com.sda.bank;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,5 +24,12 @@ public class AccountService {
             //result = true;
         }
         return result;
+    }
+    public Account getAccount(int accountId){
+        throw new UnsupportedOperationException();
+    }
+
+    public boolean isAccountPresent(int id) {
+        throw new UnsupportedOperationException();
     }
 }
