@@ -13,6 +13,9 @@ public class UserService {
     public int getNumberOfUsers(){
         return users.size();
     }
+    public boolean isUserPresent(int userId){
+        return users.stream().anyMatch(e-> userId==e.getId());
+    }
 
     public boolean addUser(User user) {
         boolean result = false;
